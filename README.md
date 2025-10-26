@@ -1,147 +1,152 @@
-Here's a great `README.md` file for your project. You can copy and paste this text directly into a new file named `README.md` in your main `mern-job-tracker` folder.
-
------
-
-```markdown
 # MERN Job Application Tracker
 
-A full-stack web application built with the MERN stack (MongoDB, Express, React, Node.js) to help users track their job applications. Users can create, view, update, and delete job entries in a clean, multi-page interface.
+A **full-stack web application** built with the MERN stack (MongoDB, Express, React, Node.js) that helps users **track their job applications**. Users can create, view, update, and delete job entries through a **modern, multi-page interface**.
 
-![Job Application Tracker Dashboard](https://i.imgur.com/your-dashboard-image.png)
-*(Replace this with a real screenshot of your app!)*
+---
 
 ## Features
 
-* **Full CRUD Functionality:**
-    * **Create:** Add new job applications with details like company name, job title, date, and status.
-    * **Read:** View all job applications on a responsive dashboard and see details for a single application.
-    * **Update:** Edit existing job applications.
-    * **Delete:** Remove job applications with a confirmation prompt.
-* **Multi-Page Interface:** Uses `react-router-dom` to create a seamless user experience with separate pages for:
-    * Dashboard (View all jobs)
-    * Add New Job
-    * View Job Details
-    * Edit Job
-* **Backend Validation:** Ensures data integrity using Mongoose schemas (e.g., required fields, date validation).
-* **Professional UI:** Styled with pure CSS to match a modern, clean design, including responsive job cards and forms.
+- **Full CRUD Functionality**
+  - **Create:** Add new job applications with company name, job title, date, and status.
+  - **Read:** View all job applications in a responsive dashboard and see details for a single application.
+  - **Update:** Edit existing job applications.
+  - **Delete:** Remove job applications with confirmation prompts.
+
+- **Multi-Page Interface:**  
+  Uses `react-router-dom` for smooth navigation between pages:
+  - Dashboard (View all jobs)
+  - Add New Job
+  - View Job Details
+  - Edit Job
+
+- **Backend Validation:**  
+  Ensures data integrity with **Mongoose schemas** (required fields, date validation, etc.).
+
+- **Professional UI:**  
+  Clean and responsive design using pure CSS, including **job cards, forms, and layouts**.
+
+---
 
 ## Tech Stack
 
 ### Backend
-* **Node.js:** JavaScript runtime environment
-* **Express:** Web framework for Node.js
-* **MongoDB Atlas:** Cloud-hosted NoSQL database
-* **Mongoose:** Object Data Modeling (ODM) library for MongoDB
-* **`dotenv`:** For managing environment variables
-* **`cors`:** For enabling cross-origin requests
+- **Node.js** – JavaScript runtime
+- **Express** – Web framework
+- **MongoDB Atlas** – Cloud-hosted NoSQL database
+- **Mongoose** – ODM for MongoDB
+- **dotenv** – Environment variable management
+- **cors** – Cross-origin requests
 
 ### Frontend
-* **React:** JavaScript library for building user interfaces
-* **Vite:** Next-generation frontend tooling
-* **React Router (`react-router-dom`):** For client-side routing
-* **Axios:** For making HTTP requests to the backend API
+- **React** – UI library
+- **Vite** – Frontend tooling
+- **React Router (`react-router-dom`)** – Client-side routing
+- **Axios** – HTTP requests to the backend API
+
+---
 
 ## Folder Structure
 
-```
+mern-job-tracker/
+├── backend/
+│ ├── config/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── .env # Contains secrets (Not on GitHub)
+│ ├── package.json
+│ └── server.js
+├── frontend/
+│ ├── src/
+│ │ ├── Components/ # Reusable components like JobCard
+│ │ ├── pages/ # DashboardPage, AddJobPage, ViewJobPage
+│ │ ├── services/ # api.js
+│ │ ├── App.jsx
+│ │ ├── index.css
+│ │ └── main.jsx
+│ ├── package.json
+│ └── vite.config.js
+└── README.md
 
-📁 mern-job-tracker/
-│
-├── 📁 backend/
-│   ├── 📁 config/
-│   ├── 📁 controllers/
-│   ├── 📁 models/
-│   ├── 📁 routes/
-│   ├── 📄 .env          (Contains secret keys - *Not on GitHub*)
-│   ├── 📄 package.json
-│   └── 📄 server.js
-│
-├── 📁 frontend/
-│   ├── 📁 src/
-│   │   ├── 📁 Components/ (Reusable components like Layout, JobCard)
-│   │   ├── 📁 pages/      (DashboardPage, AddJobPage, etc.)
-│   │   ├── 📁 services/   (api.js)
-│   │   ├── 📄 App.jsx     (Main router)
-│   │   ├── 📄 index.css   (Global styles)
-│   │   └── 📄 main.jsx
-│   ├── 📄 package.json
-│   └── 📄 vite.config.js
-│
-└── 📄 README.md
 
-````
+
+
+---
 
 ## Getting Started
 
-Follow these instructions to get a copy of the project up and running on your local machine.
+Follow these steps to run the project locally.
 
 ### Prerequisites
+- Node.js (v18 or later)
+- npm (Node Package Manager)
+- MongoDB Atlas Account: [Sign up here](https://www.mongodb.com/cloud/atlas)
 
-* **Node.js** (v18 or later)
-* **npm** (Node Package Manager)
-* **MongoDB Atlas Account:** You'll need a [free MongoDB Atlas account](https://www.mongodb.com/cloud/atlas) and your connection string.
+---
 
 ### Backend Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/mern-job-tracker.git](https://github.com/your-username/mern-job-tracker.git)
-    cd mern-job-tracker
-    ```
+1. Clone the repository:
 
-2.  **Navigate to the backend folder:**
-    ```bash
-    cd backend
-    ```
+```bash
+git clone https://github.com/dilliraja7/JobApplicationTracker.git
+cd mern-job-tracker/backend
 
-3.  **Install backend dependencies:**
-    ```bash
-    npm install
-    ```
+2.Install dependencies:
+npm install
 
-4.  **Create your environment file:**
-    * Create a new file named `.env` in the `backend` folder.
-    * Add your MongoDB connection string to it:
-    ```env
-    MONGO_URI=mongodb+srv://<your_username>:<your_password>@your-cluster-url.mongodb.net/job-tracker
-    ```
+3.Create .env file in the backend folder:
+PORT=5000
+MONGO_URI=mongodb+srv://Dilliraja:jobtracker123@cluster0.xb2ay.mongodb.net/job-tracker?retryWrites=true&w=majority
 
-5.  **Start the backend server:**
-    ```bash
-    npm run dev
-    ```
-    Your backend will be running at `http://localhost:5000`.
+4.Start backend server:
+npm run dev
 
-### Frontend Setup
+Frontend Setup
 
-1.  **Open a new terminal.**
+Open a new terminal and navigate to frontend:
 
-2.  **Navigate to the frontend folder:**
-    ```bash
-    cd frontend
-    ```
+cd mern-job-tracker/frontend
 
-3.  **Install frontend dependencies:**
-    ```bash
-    npm install
-    ```
 
-4.  **Start the frontend development server:**
-    ```bash
-    npm run dev
-    ```
-    Your frontend will open at `http://localhost:5173` (or a similar port). The app is configured with a proxy, so it can communicate with your backend.
+Install dependencies:
 
-## API Endpoints
+npm install
 
-The backend server provides the following RESTful API endpoints:
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/api/jobs` | Get all job applications. |
-| `POST` | `/api/jobs` | Create a new job application. |
-| `GET` | `/api/jobs/:id` | Get a single job by its ID. |
-| `PUT` | `/api/jobs/:id` | Update a job by its ID. |
-| `DELETE` | `/api/jobs/:id` | Delete a job by its ID. |
+Create .env in frontend:
 
-````
+VITE_API_URL=https://jobapplicationtracker-2-vt26.onrender.com/api/jobs
+
+
+Start frontend development server:
+
+npm run dev
+
+
+Frontend runs at: http://localhost:5173
+
+API Endpoints
+| Method | Endpoint        | Description              |
+| ------ | --------------- | ------------------------ |
+| GET    | `/api/jobs`     | Get all job applications |
+| POST   | `/api/jobs`     | Create a new job         |
+| GET    | `/api/jobs/:id` | Get a single job by ID   |
+| PUT    | `/api/jobs/:id` | Update a job by ID       |
+| DELETE | `/api/jobs/:id` | Delete a job by ID       |
+
+
+Live Demo
+
+Frontend: https://68fe39e11cad5b6216e8d0ca--sparkly-pegasus-66df06.netlify.app/
+
+Backend: https://jobapplicationtracker-2-vt26.onrender.com/
+
+✅ This version is:
+
+- Professionally aligned  
+- Uses clear headings and bullet points  
+- Includes environment variables setup  
+- Ready to show **live demo links** and project structure  
+
+---

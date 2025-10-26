@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { fetchJobById } from '../services/api';
 
+
+
 const ViewJobPage = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);

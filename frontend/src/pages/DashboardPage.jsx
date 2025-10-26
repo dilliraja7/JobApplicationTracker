@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import JobCard from '..//Components/JobCard';
-import { fetchJobs, deleteJob } from '../services/api';
+import JobCard from '../Components/JobCard';
+import { getJobs, deleteJob } from '../services/api'; // Correct import
 
 const DashboardPage = () => {
   const [jobs, setJobs] = useState([]);
@@ -10,8 +10,8 @@ const DashboardPage = () => {
   const loadJobs = async () => {
     try {
       setIsLoading(true);
-      const res = await fetchJobs();
-      setJobs(res.data);
+      const res = await getJobs(); // use getJobs, not fetchJobs
+      setJobs(res);
       setError(null);
     } catch (err) {
       console.error(err);
