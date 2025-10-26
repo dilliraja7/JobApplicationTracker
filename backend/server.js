@@ -1,21 +1,28 @@
-const express = require('express');
-const connectDB = require('./config/db');
-const cors = require('cors');
 
-require('dotenv').config();
-const app = express();
+const express = require('express');
+const dotenv = require('dotenv');
+const cors = require('cors');
+const connectDB = require('./config/db');
+
+const jobRoutes = require('./routes/jobs'); 
+
+
+dotenv.config();
 
 
 connectDB();
 
-
-app.use(cors()); 
-app.use(express.json({ extended: false })); 
-
-app.get('/', (req, res) => res.send('API Running'));
+const app = express();
 
 
-app.use('/api/jobs', require('./routes/jobs'));
+app.use(express.json());
+
+
+app.use(cors());
+
+
+app.use('/api/jobs', jobRoutes); 
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
