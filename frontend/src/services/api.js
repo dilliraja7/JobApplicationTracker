@@ -1,16 +1,11 @@
 import axios from 'axios';
 
-// We use '/api/jobs' because our proxy in vite.config.js will catch it
-const API_URL = '/api/jobs'; 
+const API_URL = 'http://localhost:5000/api/jobs'; // Use full URL if CORS enabled
 
-// Function 1: Read All Jobs
 export const fetchJobs = () => axios.get(API_URL);
-
-// Function 2: Create a Job
-export const createJob = (newJob) => axios.post(API_URL, newJob);
-
-// Function 3: Update a Job
-export const updateJob = (id, updatedJob) => axios.put(`${API_URL}/${id}`, updatedJob);
-
-// Function 4: Delete a Job
+export const fetchJobById = (id) => axios.get(`${API_URL}/${id}`);
+export const createJob = (newJob) =>
+  axios.post(API_URL, newJob, { headers: { 'Content-Type': 'application/json' } });
+export const updateJob = (id, updatedJob) =>
+  axios.put(`${API_URL}/${id}`, updatedJob, { headers: { 'Content-Type': 'application/json' } });
 export const deleteJob = (id) => axios.delete(`${API_URL}/${id}`);

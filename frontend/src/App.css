@@ -40,3 +40,97 @@
 .read-the-docs {
   color: #888;
 }
+.job-status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Status Colors */
+.status-applied {
+  background-color: #007bff; /* Blue */
+}
+
+.status-interview {
+  background-color: #ffc107; /* Yellow */
+  color: #000;
+}
+
+.status-offer {
+  background-color: #28a745; /* Green */
+}
+
+.status-rejected {
+  background-color: #dc3545; /* Red */
+}
+
+/* Card Styling */
+.job-card-new {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
+
+.job-card-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-initials {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.job-title-company h3 {
+  margin: 0;
+}
+
+.job-title-company p {
+  margin: 0;
+  color: #555;
+}
+
+.job-card-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.job-card-bottom .btn {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-view {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
