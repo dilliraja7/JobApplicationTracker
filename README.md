@@ -26,6 +26,12 @@ A **full-stack web application** built with the MERN stack (MongoDB, Express, Re
   Clean and responsive design using pure CSS, including **job cards, forms, and layouts**.
 
 ---
+Live Demo
+
+Frontend: https://68fe39e11cad5b6216e8d0ca--sparkly-pegasus-66df06.netlify.app/
+
+Backend: https://jobapplicationtracker-2-vt26.onrender.com/
+
 
 ## Tech Stack
 
@@ -47,26 +53,7 @@ A **full-stack web application** built with the MERN stack (MongoDB, Express, Re
 
 ## Folder Structure
 
-mern-job-tracker/
-├── backend/
-│ ├── config/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── .env # Contains secrets (Not on GitHub)
-│ ├── package.json
-│ └── server.js
-├── frontend/
-│ ├── src/
-│ │ ├── Components/ # Reusable components like JobCard
-│ │ ├── pages/ # DashboardPage, AddJobPage, ViewJobPage
-│ │ ├── services/ # api.js
-│ │ ├── App.jsx
-│ │ ├── index.css
-│ │ └── main.jsx
-│ ├── package.json
-│ └── vite.config.js
-└── README.md
+📁 mern-job-tracker/ │ ├── 📁 backend/ │ ├── 📁 config/ │ ├── 📁 controllers/ │ ├── 📁 models/ │ ├── 📁 routes/ │ ├── 📄 .env (Contains secret keys - *Not on GitHub*) │ ├── 📄 package.json │ └── 📄 server.js │ ├── 📁 frontend/ │ ├── 📁 src/ │ │ ├── 📁 Components/ (Reusable components like Layout, JobCard) │ │ ├── 📁 pages/ (DashboardPage, AddJobPage, etc.) │ │ ├── 📁 services/ (api.js) │ │ ├── 📄 App.jsx (Main router) │ │ ├── 📄 index.css (Global styles) │ │ └── 📄 main.jsx │ ├── 📄 package.json │ └── 📄 vite.config.js │ └── 📄 README.md
 
 
 
@@ -80,7 +67,7 @@ Follow these steps to run the project locally.
 ### Prerequisites
 - Node.js (v18 or later)
 - npm (Node Package Manager)
-- MongoDB Atlas Account: [Sign up here](https://www.mongodb.com/cloud/atlas)
+- MongoDB Atlas Account: https://cloud.mongodb.com/v2/679f2e0f0478375c32efa600#/overview
 
 ---
 
@@ -136,11 +123,6 @@ API Endpoints
 | DELETE | `/api/jobs/:id` | Delete a job by ID       |
 
 
-Live Demo
-
-Frontend: https://68fe39e11cad5b6216e8d0ca--sparkly-pegasus-66df06.netlify.app/
-
-Backend: https://jobapplicationtracker-2-vt26.onrender.com/
 
 ✅ This version is:
 
