@@ -1,17 +1,17 @@
-// backend/controllers/jobController.js
 const Job = require('../models/Job');
 
-// 1. GET ALL JOBS
+// Get all jobs
 exports.getAllJobs = async (req, res) => {
   try {
-    const jobs = await Job.find().sort({ applicationDate: -1 }); // Newest first
+    const jobs = await Job.find().sort({ applicationDate: -1 });
     res.status(200).json(jobs);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// 2. CREATE A JOB
+// Create a new job
 exports.createJob = async (req, res) => {
   try {
     const job = await Job.create(req.body);
@@ -21,53 +21,50 @@ exports.createJob = async (req, res) => {
       const messages = Object.values(error.errors).map(val => val.message);
       return res.status(400).json({ message: messages.join(', ') });
     }
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// 3. GET ONE JOB BY ID
+// Get a job by ID
 exports.getJobById = async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
-    if (!job) {
-      return res.status(404).json({ message: 'Job not found' });
-    }
+    if (!job) return res.status(404).json({ message: 'Job not found' });
     res.status(200).json(job);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// 4. UPDATE A JOB
+// Update a job
 exports.updateJob = async (req, res) => {
   try {
     const job = await Job.findByIdAndUpdate(req.params.id, req.body, {
-      new: true, // Return the updated document
-      runValidators: true, // Re-run schema validation
+      new: true,
+      runValidators: true,
     });
-    
-    if (!job) {
-      return res.status(404).json({ message: 'Job not found' });
-    }
+    if (!job) return res.status(404).json({ message: 'Job not found' });
     res.status(200).json(job);
   } catch (error) {
     if (error.name === 'ValidationError') {
       const messages = Object.values(error.errors).map(val => val.message);
       return res.status(400).json({ message: messages.join(', ') });
     }
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
 
-// 5. DELETE A JOB
+// Delete a job
 exports.deleteJob = async (req, res) => {
   try {
     const job = await Job.findByIdAndDelete(req.params.id);
-    if (!job) {
-      return res.status(404).json({ message: 'Job not found' });
-    }
+    if (!job) return res.status(404).json({ message: 'Job not found' });
     res.status(200).json({ message: 'Job deleted successfully' });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: 'Server Error' });
   }
 };
